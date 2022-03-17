@@ -12,6 +12,7 @@ const diceEl = document.querySelector('.dice');
 const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
+let ultimateGoal = 100;
 
 let scores, currentScore, activePlayer, playing;
 
@@ -47,15 +48,20 @@ const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.close-modal');
 const btnOpenModal = document.querySelector('.btn--how');
+const rules = document.querySelector('.rules');
+const btnOpenRules = document.querySelector('.btn--rules');
+const btnCloseRules = document.querySelector('.close-rules');
+const btnChangeName = document.querySelector('.changeName');
+const btnSetName = document.querySelector('.setName');
 
-//open modal
+//open how to play
 const openModal = function () {
   modal.classList.remove('hidden');
   overlay.classList.remove('hidden');
 };
 btnOpenModal.addEventListener('click', openModal);
 
-//close modal
+//close how to play
 const closeModal = function () {
   modal.classList.add('hidden');
   overlay.classList.add('hidden');
@@ -63,6 +69,29 @@ const closeModal = function () {
 
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
+
+//open settings
+const openRules = function () {
+  rules.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+btnOpenRules.addEventListener('click', openRules);
+
+//close settings
+const closeRules = function () {
+  rules.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+btnCloseRules.addEventListener('click', closeRules);
+overlay.addEventListener('click', closeRules);
+
+//change settings
+btnSetName.addEventListener('click', function () {
+  alert('button clicked');
+  document.getElementById('name--0');
+  document.setAttribute('.name--0', 'emre');
+  return;
+});
 
 //rolling dice functionality
 btnRoll.addEventListener('click', function () {
@@ -96,7 +125,7 @@ btnHold.addEventListener('click', function () {
       scores[activePlayer];
 
     //check if players score is >=100
-    if (scores[activePlayer] >= 50) {
+    if (scores[activePlayer] >= ultimateGoal) {
       //finish the game
       playing = false;
       diceEl.classList.add('hidden');

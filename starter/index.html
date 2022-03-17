@@ -28,10 +28,20 @@
 
       <img src="dice-5.png" alt="Playing dice" class="dice" />
       <button class="btn btn--new">🔄 New game</button>
-      <button class="btn btn--change">⚠ Change The Rules</button>
+      <button class="btn btn--rules">⚠ Change The Rules</button>
       <button class="btn btn--how">❔ How To Play</button>
       <button class="btn btn--roll">🎲 Roll dice</button>
       <button class="btn btn--hold">📥 Hold</button>
+
+      <div class="rules hidden">
+        <button class="close-rules">&times;</button>
+        <h1>📐Change The Rules</h1>
+        <p>⭕Edit Player 1</p>
+        <button class="changeName" id="name--0">
+          <input type="Change Player 1" />
+          <button class="setName" id="name--0">Change</button>
+        </button>
+      </div>
 
       <div class="modal hidden">
         <button class="close-modal">&times;</button>
