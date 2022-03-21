@@ -88,9 +88,9 @@ overlay.addEventListener('click', closeRules);
 //change settings
 btnSetName.addEventListener('click', function () {
   alert('button clicked');
-  document.getElementById('name--0');
-  document.setAttribute('.name--0', 'emre');
-  return;
+  document.getElementById(
+    `name--${activePlayer}`
+  ).textContent = `name--${activePlayer}`;
 });
 
 //rolling dice functionality
